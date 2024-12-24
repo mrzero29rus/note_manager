@@ -6,10 +6,10 @@ created_date = input("Введите дату создания: ")
 issue_date = input("Введите дату выполнения: ")
 
 note = [
-    username,
-    [title1, title2],
-    content,
-    created_date[:5],
-    issue_date[:5]
+    "Имя пользователя: ", username,
+    "Заголовки: ", [title1, title2],
+    "Содержание: ", content,
+    "Дата создания: ", created_date[:5],
+    "Дата выполнения: ", issue_date[:5]
 ]
 print(note)
