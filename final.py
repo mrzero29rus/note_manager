@@ -9,7 +9,7 @@ note = [
     username,
     [title1, title2],
     content,
-    created_date,
-    issue_date
+    created_date[:5],
+    issue_date[:5]
 ]
 print(note)
