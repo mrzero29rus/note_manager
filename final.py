@@ -1,11 +1,12 @@
 username = input("Введите ваше имя: ")
 title1 = input("Введите название заметки: ")
 title2 = input("Введите название заметки: ")
+title3 = input("Введите название заметки: ")
 content = input("Введите содержание заметки: ")
 created_date = input("Введите дату создания: ")
 issue_date = input("Введите дату выполнения: ")
 
-note = [username, [title1, title2], content, created_date[:5], issue_date[:5]]
+note = [username, [title1, title2, title3], content, created_date[:5], issue_date[:5]]
 
 print("Имя пользовател: ", note[0])
 print("Заголовки: ", note[1])
