@@ -8,7 +8,7 @@ note["Статус"] = "В процессе"
 titles = []
 while True:
     title = input("Введите название заметки (введите \"Стоп\" или нажмите \"Enter\" чтобы закончить ввод): ")
-    if title == "Стоп" or title == "":
+    if title.lower() == "cтоп" or title == "":
         break
     else:
         titles.append(title)
