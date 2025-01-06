@@ -1,7 +1,7 @@
-# импорт классов datetime и timedelta для работы с датами и разницей между датами
 from datetime import datetime, timedelta
+from os import remove
 
-# вывод текущей даты и конвертация в формат д-м-г
+# получение текущей даты, конвертация в формат дд-мм-гггг и вывод на экран
 current_date = datetime.today()
 print("Текущая дата: ", datetime.strftime(current_date, "%d-%m-%Y"))
 
