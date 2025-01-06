@@ -10,5 +10,3 @@ issue_date = datetime.strptime(input_date, "%d-%m-%Y")
 
 print("Текущая дата: ", datetime.strftime(current_date, "%d-%m-%Y"))
 print("Дата выполнения: ", datetime.strftime(issue_date, "%d-%m-%Y"))
-
-
