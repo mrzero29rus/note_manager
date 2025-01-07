@@ -1,5 +1,4 @@
 from datetime import datetime, timedelta
-from os import remove
 
 # получение текущей даты, конвертация в формат дд-мм-гггг и вывод на экран
 current_date = datetime.today()

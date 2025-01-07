@@ -18,21 +18,22 @@ note["Заголовки"] = titles
 print("\n", note)
 
 # ввод нового статуса заметки
-print("\nВыберите новый статус для вашей заметки и нажмите Enter:"
-      "\n1 - В процессе \n2 - Выполнено \n3 - Отложено")
-while True:
-    status = input("Ответ: ")
-    if status == "1":
-        note["Статус"] = "В процессе"
-        break
-    elif status == "2":
-        note["Статус"] = "Выполнено"
-        break
-    elif status == "3":
-        note["Статус"] = "Отложено"
-        break
-    else:
-        print("Ошибка, поторите ввод")
-
+def update_status():
+    print("\nВыберите новый статус для вашей заметки и нажмите Enter:"
+          "\n1 - В процессе \n2 - Выполнено \n3 - Отложено")
+    while True:
+        status = input("Ответ: ")
+        if status == "1":
+            note["Статус"] = "В процессе"
+            break
+        elif status == "2":
+            note["Статус"] = "Выполнено"
+            break
+        elif status == "3":
+            note["Статус"] = "Отложено"
+            break
+        else:
+            print("Ошибка, поторите ввод")
+        return
 # вывод финального состояния заметки
 print("\n", note)
