@@ -16,6 +16,5 @@ print("Дата выполнения:", issue_date)
 # from datetime import date
 # current_date = date.today()
 # issue_date = date(2025, 1, 31)
-#
 # print(date.strftime(current_date, "%d-%m-%y"))
 # print(date.strftime(issue_date, "%d-%m-%y"))

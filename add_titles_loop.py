@@ -1,11 +1,10 @@
-def input_titles():
-    titles = []
-    while True:
-        title = input("Введите название заметки (введите \"Стоп\" или нажмите \"Enter\" чтобы закончить ввод): ").lower()
-        if title == "стоп" or title == "":
-            break
-        else:
-            titles.append(title)
-    return titles
+titles = []
+while True:
+    title = input("Введите название заметки (введите \"Стоп\" или нажмите \"Enter\" чтобы закончить ввод): ")
+    if title.lower() == "стоп" or title == "":
+        break
+    else:
+        titles.append(title)
+print(titles)
 
-print(input_titles())
+# добавить проверку на уникальность заголовков
