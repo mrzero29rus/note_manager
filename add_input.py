@@ -4,11 +4,13 @@
 username = input("Введите ваше имя: ")
 title = input("Введите название заметки: ")
 content = input("Введите содержание заметки: ")
+status = input("Введите статус заметки: "),
 created_date = input("Введите дату создания (дд-мм-гггг): ")
 issue_date = input("Введите дату выполнения (дд-мм-гггг): ")
 
 print("Создано:",username)
 print("Название:",title)
 print("Содержание:",content)
-print("Дата созданиия:", created_date[:5])
-print("Дата выполнения:", issue_date[:5])
+print("Статус:", status)
+print("Дата созданиия:",created_date[:5])
+print("Дата выполнения:",issue_date[:5])

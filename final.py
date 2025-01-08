@@ -10,6 +10,7 @@ titles_list = [title1, title2, title3]
 
 titles = titles_list
 content = input("Введите содержание заметки: ")
+status = input("Введите статус заметки: "),
 created_date = input("Введите дату создания (дд-мм-гггг): ")
 issue_date = input("Введите дату выполнения (дд-мм-гггг): ")
 
@@ -17,6 +18,7 @@ note = [
     username,
     titles,
     content,
+    status,
     created_date,
     issue_date,
 ]
