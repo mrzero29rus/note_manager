@@ -1,13 +1,15 @@
 username = input("Введите ваше имя: ")
 
-title1 = input("Заголовок 1: ")
-title2 = input("Заголовок 2: ")
-title3 = input("Заголовок 3: ")
-titles_list = [title1, title2, title3]
+titles = []
+while True:
+    title = input("Введите название заметки (введите \"Стоп\" или нажмите \"Enter\" чтобы закончить ввод): ")
+    if title.lower() == "стоп" or title == "":
+        break
+    else:
+        titles.append(title)
 
-titles = titles_list
 content = input("Введите содержание заметки: ")
-status = "В процессе",
+status = "В процессе",                                              # переделать
 created_date = input("Введите дату создания (дд-мм-гггг): ")
 issue_date = input("Введите дату выполнения (дд-мм-гггг): ")
 
@@ -19,6 +21,8 @@ note = [
     created_date,
     issue_date,
 ]
+
+print(note)
 
 print(f"Текущий статуст заметки: {status}")
 
