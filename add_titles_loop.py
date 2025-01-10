@@ -2,13 +2,17 @@
 # реализована возможность завершить ввод, указав специальную команду (например, "стоп" или пустой ввод)
 # все заголовки добавляются в список
 
-titles = []
-while True:
-    title = input("Введите название заметки (введите \"Стоп\" или нажмите \"Enter\" чтобы закончить ввод): ")
-    if title.lower() == "стоп" or title == "":
-        break
-    else:
-        titles.append(title)
-print(titles)
+def input_titles():
+    titles = []
+    while True:
+        title = input("Введите название заметки (введите \"Стоп\" или нажмите \"Enter\" чтобы закончить ввод): ")
+        if title.lower() == "стоп" or title == "":
+            break
+        else:
+            titles.append(title)
+        return(titles)
 
+print(input_titles())
+
+# создать функцию
 # добавить проверку на уникальность заголовков
