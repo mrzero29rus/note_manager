@@ -5,6 +5,8 @@
 # Функция для обработки пользовательского ввода
 
 from datetime import datetime
+from os import remove
+
 
 # функция получения текущей даты и конвертация в формат дд-мм-гггг
 def current_date_function():
@@ -21,14 +23,15 @@ def input_issue_date_function():
 def delta_function():
     delta = datetime.strptime(str(input("Введите дату выполнения (дд-мм-гггг): ")), "%d-%m-%Y").date() - \
             datetime.today().date()
-
-    if delta > 1:
-        print("\nДо даты выполнения:", delta, "дней")
-    elif delta == 0:
+    if delta.days > 1:
+        print("\nДо даты выполнения:", delta.days, "дней")
+    elif delta.days == 0:
         print("\nВнимание! Дата выполнения сегодня!")
     else:
-        print("\nВнимание! Дата выполнения истекла", delta, "дней назад")
+        print("\nВнимание! Дата выполнения истекла", delta.days, "дней назад")
 
 
 # print("Текущая дата: ", datetime.strftime(current_date, "%d-%m-%Y"))
 # print("Дата выполнения: ", datetime.strftime(issue_date, "%d-%m-%Y"))
+
+delta_function()
