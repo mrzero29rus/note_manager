@@ -5,8 +5,6 @@
 # Функция для обработки пользовательского ввода
 
 from datetime import datetime
-from os import remove
-
 
 # функция получения текущей даты и конвертация в формат дд-мм-гггг
 def current_date_function():
@@ -21,17 +19,22 @@ def input_issue_date_function():
 
 # расчет дней на исполнение или количества дней просрочки
 def delta_function():
-    delta = datetime.strptime(str(input("Введите дату выполнения (дд-мм-гггг): ")), "%d-%m-%Y").date() - \
-            datetime.today().date()
+    issue_date = datetime.strptime(str(input("Введите дату выполнения (дд-мм-гггг): ")), "%d-%m-%Y").date()
+    delta = issue_date - datetime.today().date()
+    print("\nДата выполнения: ", datetime.strftime(issue_date, "%d-%m-%Y"))
     if delta.days > 1:
-        print("\nДо даты выполнения:", delta.days, "дней")
+        print("До даты выполнения:", delta.days, "дней")
     elif delta.days == 0:
-        print("\nВнимание! Дата выполнения сегодня!")
+        print("Внимание! Дата выполнения сегодня!")
     else:
-        print("\nВнимание! Дата выполнения истекла", delta.days, "дней назад")
-
+        print("\Внимание! Дата выполнения истекла", delta.days, "дней назад")
 
 # print("Текущая дата: ", datetime.strftime(current_date, "%d-%m-%Y"))
 # print("Дата выполнения: ", datetime.strftime(issue_date, "%d-%m-%Y"))
 
 delta_function()
+
+'''
+сделать проверку на правильность ввода
+убрать "минус" если дата выполнения истекла
+'''
