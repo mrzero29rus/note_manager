@@ -1,45 +1,22 @@
-def input_titles():
-    titles = []
+# функция смены статуса
+def update_status_function():
+    status = "Новая"
+    print("Текущий статус заметки:",status)
+    print("Выберите новый статус для вашей заметки и нажмите Enter:" 
+          "\n1 - В процессе \n2 - Выполнено \n3 - Отложено")
     while True:
-        title = input("Введите название заметки\n(введите \"Стоп\" или нажмите \"Enter\" чтобы закончить ввод): ")
-        if title.lower() == "стоп" or title == "":
+        num = input("Ответ: ")
+        if num == "1":
+            status = "В процессе"
             break
-        if title in titles:
-            print("Такой заголовок уже существует!")
+        elif num == "2":
+            status = "Выполнено"
+            break
+        elif num == "3":
+            status = "Отложено"
+            break
         else:
-            titles.append(title)
-    return titles
+            print("Ошибка, повторите ввод")
+    print("Новый статус заметки:", status)
 
-note = [
-    input("Введите ваше имя: "),
-    input_titles(),
-    input("Введите содержание заметки: "),
-    "Новая",
-    input("Введите дату создания (дд-мм-гггг): "),
-    input("Введите дату выполнения (дд-мм-гггг): ")
-]
-
-# изменение статуса заметки
-print("\nТекущий статуст заметки:", note[3])
-print("Выберите новый статус для вашей заметки и нажмите Enter:"
-      "\n1 - В процессе \n2 - Выполнено \n3 - Отложено")
-while True:
-    num = input("Ответ: ")
-    if num == "1":
-        note[3] = "В процессе"
-        break
-    elif num == "2":
-        note[3] = "Выполнено"
-        break
-    elif num == "3":
-        note[3] = "Отложено"
-        break
-    else:
-        print("Ошибка, повторите ввод")
-
-print("\nИмя пользователя:", note[0],
-      "\nЗаголовки:", note[1],
-      "\nСодержание:", note[2],
-      "\nСтатус:", note[3],
-      "\nДата создания:", note[4],
-      "\nДата выполнения:",note[5])
+update_status_function()
