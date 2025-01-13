@@ -35,6 +35,7 @@ def delta_function():
         print("Внимание! Дата выполнения сегодня!")
     else:
         print("\Внимание! Дата выполнения истекла", delta.days, "дней назад")
+# return print???
 
 note = [
     input("Введите ваше имя: "),
