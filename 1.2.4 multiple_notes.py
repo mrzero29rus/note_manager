@@ -65,22 +65,22 @@ def input_issue_date_function():
 
 # сборка заметки
 def create_note_function():
-    username = input_username_function()
-    titles = input_titles_function()
-    content = input_content_function()
-    status = update_status_function()
+    username     = input_username_function()
+    titles       = input_titles_function()
+    content      = input_content_function()
+    status       = update_status_function()
     current_date = current_date_function()
-    issue_date = input_issue_date_function()
+    issue_date   = input_issue_date_function()
 
     data = [username, titles, content, status, current_date, issue_date]
 
     note = {
         "Имя пользователя:" : data[0],
-        "Заголовки" : data[1],
-        "Содержание" : data[2],
-        "Статус" : data[3],
-        "Дата создания" : data[4],
-        "Дата выполнения" : data[5]
+        "Заголовки"         : data[1],
+        "Содержание"        : data[2],
+        "Статус"            : data[3],
+        "Дата создания"     : data[4],
+        "Дата выполнения"   : data[5]
     }
     notes.append(note)
 
