@@ -28,10 +28,8 @@ def input_content_function():
 # изменение статуса заметки
 def update_status_function():
     print("Текущий статус заметки: Новая")
-    print("Выберите новый статус для вашей заметки и нажмите Enter:" 
-          "\n1 - В процессе \n2 - Выполнено \n3 - Отложено")
+    print("Выберите новый статус заметки и нажмите Enter: 1 - В процессе; 2 - Выполнено; 3 - Отложено.")
     while True:
-        status = None
         num = input("Ответ: ")
         if num == "1":
             status = "В процессе"
@@ -51,12 +49,6 @@ def current_date_function():
     current_date = datetime.strftime(datetime.today(), "%d-%m-%Y")
     print("Текущая дата:",current_date)
     return current_date
-
-# # функция получения от пользователя даты выполнения
-# def input_issue_date_function():
-#     issue_date = datetime.strptime(str(input("Введите дату выполнения (дд-мм-гггг): ")), "%d-%m-%Y")
-#     print("Дата выполнения:", datetime.strftime(issue_date, "%d-%m-%Y"))
-#     return issue_date
 
 # функция расчета дней до даты выполнения, дней просрочки
 def input_issue_date_function():
@@ -92,5 +84,13 @@ def create_note_function():
     }
     notes.append(note)
 
-create_note_function()
-print(notes)
+print("Добро пожаловать в \"Менеджер заметок\"! Вы можете добавить новую заметку.")
+while True:
+    print("Хотите добавить заметку: 1 - Да; 2 - Нет.")
+    num = input("Ответ: ")
+    if num == "1":
+        create_note_function()
+    elif num == "2":
+        print(notes)
+    else:
+        print("Ошибка, повторите ввод")
