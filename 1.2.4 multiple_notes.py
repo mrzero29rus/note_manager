@@ -22,7 +22,7 @@ def input_titles_function():
 
 # функция ввода содержания заметки
 def input_content_function():
-    content = input("Введите содержние заметки: ")
+    content = input("Введите содержание заметки: ")
     return content
 
 # изменение статуса заметки
