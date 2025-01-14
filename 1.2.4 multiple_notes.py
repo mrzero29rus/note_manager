@@ -1,7 +1,14 @@
 from datetime import datetime
 
+notes =[]
+
+# функция ввода имени пользователя
+def input_username_function():
+    username = input("Введите имя пользователя: ")
+    return username
+
 # функция ввода заголовков
-def input_titles():
+def input_titles_function():
     titles = []
     while True:
         title = input("Введите название заметки\n(введите \"Стоп\" или нажмите \"Enter\" чтобы закончить ввод): ")
@@ -13,61 +20,77 @@ def input_titles():
             titles.append(title)
     return titles
 
+# функция ввода содержания заметки
+def input_content_function():
+    content = input("Введите содержние заметки: ")
+    return content
+
+# изменение статуса заметки
+def update_status_function():
+    print("Текущий статус заметки: Новая")
+    print("Выберите новый статус для вашей заметки и нажмите Enter:" 
+          "\n1 - В процессе \n2 - Выполнено \n3 - Отложено")
+    while True:
+        status = None
+        num = input("Ответ: ")
+        if num == "1":
+            status = "В процессе"
+            break
+        elif num == "2":
+            status = "Выполнено"
+            break
+        elif num == "3":
+            status = "Отложено"
+            break
+        else:
+            print("Ошибка, повторите ввод")
+    return status
+
 # функция получения текущей даты
 def current_date_function():
     current_date = datetime.strftime(datetime.today(), "%d-%m-%Y")
+    print("Текущая дата:",current_date)
     return current_date
 
-# функция получения от пользователя даты выполнения
-def input_issue_date_function():
-    issue_date = datetime.strptime(str(input("Введите дату выполнения (дд-мм-гггг): ")), "%d-%m-%Y")
-    print("Дата выполнения:", datetime.strftime(issue_date, "%d-%m-%Y"))
-    return issue_date
+# # функция получения от пользователя даты выполнения
+# def input_issue_date_function():
+#     issue_date = datetime.strptime(str(input("Введите дату выполнения (дд-мм-гггг): ")), "%d-%m-%Y")
+#     print("Дата выполнения:", datetime.strftime(issue_date, "%d-%m-%Y"))
+#     return issue_date
 
 # функция расчета дней до даты выполнения, дней просрочки
-def delta_function():
+def input_issue_date_function():
     issue_date = datetime.strptime(str(input("Введите дату выполнения (дд-мм-гггг): ")), "%d-%m-%Y").date()
     delta = issue_date - datetime.today().date()
-    print("\nДата выполнения: ", datetime.strftime(issue_date, "%d-%m-%Y"))
+    issue_date = datetime.strftime(issue_date, "%d-%m-%Y")
     if delta.days > 1:
         print("До даты выполнения:", delta.days, "дней")
     elif delta.days == 0:
         print("Внимание! Дата выполнения сегодня!")
     else:
         print("\Внимание! Дата выполнения истекла", delta.days, "дней назад")
-# return print???
+    return issue_date
 
-note = [
-    input("Введите ваше имя: "),
-    input_titles(),
-    input("Введите содержание заметки: "),
-    "Новая",
-    current_date_function(),
-    input_issue_date_function()
-]
+# сборка заметки
+def create_note_function():
+    username = input_username_function()
+    titles = input_titles_function()
+    content = input_content_function()
+    status = update_status_function()
+    current_date = current_date_function()
+    issue_date = input_issue_date_function()
 
-# изменение статуса заметки
-print("Текущий статуст заметки:", note[3])
-def update_status_function():
-    print("Выберите новый статус для вашей заметки и нажмите Enter:" 
-          "\n1 - В процессе \n2 - Выполнено \n3 - Отложено")
-    while True:
-        num = input("Ответ: ")
-        if num == "1":
-            note[3] = "В процессе"
-            break
-        elif num == "2":
-            note[3] = "Выполнено"
-            break
-        elif num == "3":
-            note[3] = "Отложено"
-            break
-        else:
-            print("Ошибка, повторите ввод")
+    data = [username, titles, content, status, current_date, issue_date]
 
-print("\nИмя пользователя:", note[0],
-      "\nЗаголовки:", note[1],
-      "\nСодержание:", note[2],
-      "\nСтатус:", note[3],
-      "\nДата создания:", note[4],
-      "\nДата выполнения:",note[5])
+    note = {
+        "Имя пользователя:" : data[0],
+        "Заголовки" : data[1],
+        "Содержание" : data[2],
+        "Статус" : data[3],
+        "Дата создания" : data[4],
+        "Дата выполнения" : data[5]
+    }
+    notes.append(note)
+
+create_note_function()
+print(notes)
