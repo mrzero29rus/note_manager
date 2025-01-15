@@ -30,14 +30,14 @@ def update_status_function():
     print("Текущий статус заметки: Новая")
     print("Выберите новый статус заметки и нажмите \"Enter\": 1 - В процессе; 2 - Выполнено; 3 - Отложено.")
     while True:
-        num = input("Ответ: ")
-        if num == "1":
+        answer = input("Ответ: ")
+        if answer == "1":
             status = "В процессе"
             break
-        elif num == "2":
+        elif answer == "2":
             status = "Выполнено"
             break
-        elif num == "3":
+        elif answer == "3":
             status = "Отложено"
             break
         else:
@@ -60,7 +60,7 @@ def input_issue_date_function():
     elif delta.days == 0:
         print("Внимание! Дата выполнения сегодня!")
     else:
-        print("\Внимание! Дата выполнения истекла", delta.days, "дней назад")
+        print("Внимание! Дата выполнения истекла", delta.days, "дней назад")
     return issue_date
 
 # сборка заметки
@@ -84,13 +84,20 @@ def create_note_function():
     }
     notes.append(note)
 
+# функция печати заметки
+def print_note_function(note):
+    for key, values in note.items():
+        print(key, ":", values)
+
+
 print("Добро пожаловать в \"Менеджер заметок\"! Вы можете добавить новую заметку.")
 while True:
     print("Хотите добавить заметку: 1 - Да; 2 - Нет.")
-    num = input("Ответ: ")
-    if num == "1":
+    answer = input("Ответ: ")
+    if answer == "1":
         create_note_function()
-    elif num == "2":
-        print(notes)
+        print("Заметка сохранена\n")
+    elif answer == "2":
+        print_note_function()
     else:
         print("Ошибка, повторите ввод")
