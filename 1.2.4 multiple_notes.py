@@ -95,7 +95,6 @@ def print_note_function():
         for key, values in note.items():
             print(key, ":", values)
 
-
 print("Добро пожаловать в \"Менеджер заметок\"! Вы можете добавить новую заметку.")
 while True:
     print("\nХотите добавить заметку: 1 - Да; 2 - Нет.")
