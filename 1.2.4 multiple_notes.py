@@ -92,6 +92,7 @@ def create_note_function():
 # функция печати заметки
 def print_note_function():
     for note in notes:
+        print()
         for key, values in note.items():
             print(key, ":", values)
 
