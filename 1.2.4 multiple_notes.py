@@ -103,3 +103,6 @@ while True:
         print_note_function()
     else:
         print("Ошибка, повторите ввод")
+
+
+# крашится на вводе даты
