@@ -55,7 +55,7 @@ def input_issue_date_function():
     issue_date = datetime.strptime(str(input("Введите дату выполнения (дд-мм-гггг): ")), "%d-%m-%Y").date()
     delta = issue_date - datetime.today().date()
     issue_date = datetime.strftime(issue_date, "%d-%m-%Y")
-    if delta.days > 1:
+    if delta.days >= 1:
         print("До даты выполнения:", delta.days, "дней")
     elif delta.days == 0:
         print("Внимание! Дата выполнения сегодня!")
@@ -65,29 +65,30 @@ def input_issue_date_function():
 
 # сборка заметки
 def create_note_function():
-    username     = input_username_function()
-    titles       = input_titles_function()
-    content      = input_content_function()
-    status       = update_status_function()
+    username = input_username_function()
+    titles = input_titles_function()
+    content = input_content_function()
+    status = update_status_function()
     current_date = current_date_function()
-    issue_date   = input_issue_date_function()
+    issue_date = input_issue_date_function()
 
     data = [username, titles, content, status, current_date, issue_date]
 
     note = {
         "Имя пользователя:" : data[0],
-        "Заголовки"         : data[1],
-        "Содержание"        : data[2],
-        "Статус"            : data[3],
-        "Дата создания"     : data[4],
-        "Дата выполнения"   : data[5]
+        "Заголовки" : data[1],
+        "Содержание" : data[2],
+        "Статус" : data[3],
+        "Дата создания" : data[4],
+        "Дата выполнения" : data[5]
     }
     notes.append(note)
 
 # функция печати заметки
-def print_note_function(note):
-    for key, values in note.items():
-        print(key, ":", values)
+def print_note_function():
+    for note in notes:
+        for key, values in note.items():
+            print(key, ":", values)
 
 
 print("Добро пожаловать в \"Менеджер заметок\"! Вы можете добавить новую заметку.")
@@ -98,6 +99,7 @@ while True:
         create_note_function()
         print("Заметка сохранена\n")
     elif answer == "2":
+        print("Список заметок:\n")
         print_note_function()
     else:
         print("Ошибка, повторите ввод")
