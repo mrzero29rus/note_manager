@@ -32,10 +32,7 @@ delta_function()
 
 
 
-'''
-сделать проверку на правильность ввода (через try?)
-убрать "минус" если дата выполнения истекла
-'''
+
 
 # print("Текущая дата: ", datetime.strftime(current_date, "%d-%m-%Y"))
 # print("Дата выполнения: ", datetime.strftime(issue_date, "%d-%m-%Y"))

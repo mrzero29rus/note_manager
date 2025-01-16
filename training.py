@@ -1,9 +1,22 @@
 notes = [
-    {"Имя пользователя" : "Артем",   "Заголовок" : "Список покупок"},
+    {"Имя пользователя" : "Артем",   "Заголовок" : ["Список покупок"]},
     {"Имя пользователя" : "Татьяна", "Заголовок" : "Рецепт пирога"},
     {"Имя пользователя" : "Артем",   "Заголовок" : "Инструкция"}
 ]
-value = input("Введите имя пользователя или заголовок для удаления заметки: ")
-for i in range(len(notes)):
-    if notes[i]["Имя пользователя"] == value or notes[i]["Заголовок"] == value:
-        print(notes[i])
+
+def delete_note_function():
+    value = input("Введите имя пользователя или заголовок для удаления заметки: ")
+    for i in reversed(range(len(notes))):
+        if notes[i]["Имя пользователя"] == value or notes[i]["Заголовок"] == value:
+            del notes[i]
+
+def print_note_function():
+    for note in notes:
+        print()
+        for keys, values in note.items():
+            print(keys,":",values)
+
+
+delete_note_function()
+print_note_function()
+

@@ -99,10 +99,9 @@ def print_note_function():
 # функция удаления заметки
 def delete_note_function():
     value = input("Введите имя пользователя или заголовок для удаления заметки: ")
-    for i in range(len(notes)):
+    for i in reversed(range(len(notes))):
         if notes[i]["Имя пользователя"] == value or notes[i]["Заголовок"] == value:
-            del(notes[i])
-            print_note_function()
+            del notes[i]
 
 print("Добро пожаловать в \"Менеджер заметок\"!")
 while True:
@@ -116,5 +115,6 @@ while True:
         print_note_function()
     elif answer == "3":
         delete_note_function()
+        print("Удаление выполнено успешно")
     else:
         print("Ошибка, повторите ввод")
