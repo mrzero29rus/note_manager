@@ -100,7 +100,7 @@ def print_note_function():
 def delete_note_function():
     value = input("Введите имя пользователя или заголовок для удаления заметки: ")
     for i in reversed(range(len(notes))):
-        if notes[i]["Имя пользователя"] == value or notes[i]["Заголовок"] == value:
+        if notes[i]["Имя пользователя"].lower == value.lower() or notes[i]["Заголовок"].lower == value.lower():
             del notes[i]
 
 print("Добро пожаловать в \"Менеджер заметок\"!")
