@@ -3,7 +3,7 @@
 # реализована проверка на уникальность заголовков (с учетом регистра)
 # все заголовки добавляются в список
 
-def input_titles():
+def input_titles_function():
     titles = []
     while True:
         title = input("Введите название заметки\n(введите \"Стоп\" или нажмите \"Enter\" чтобы закончить ввод): ")
@@ -13,6 +13,6 @@ def input_titles():
             print("Такой заголовок уже существует!")
         else:
             titles.append(title)
-    return titles
+    print("Список заметок:\n", titles)
 
-print(input_titles())
+input_titles_function()
