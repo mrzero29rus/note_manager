@@ -1,5 +1,5 @@
 notes = [
-    {"Имя пользователя" : "Артем",   "Заголовок" : ["Список покупок"]},
+    {"Имя пользователя" : "Артем",   "Заголовок" : "Список покупок"},
     {"Имя пользователя" : "Татьяна", "Заголовок" : "Рецепт пирога"},
     {"Имя пользователя" : "Артем",   "Заголовок" : "Инструкция"}
 ]
@@ -10,6 +10,8 @@ def delete_note_function():
     for i in reversed(range(len(notes))):
         if notes[i]["Имя пользователя"].lower == value.lower() or notes[i]["Заголовок"].lower == value.lower():
             del notes[i]
+    else:
+        print("Заметка не найдена")
 
 # функция печати заметки
 def print_note_function():
@@ -19,4 +21,4 @@ def print_note_function():
             print(keys,":",values)
 
 delete_note_function()
-print_note_function()
+# print_note_function()
