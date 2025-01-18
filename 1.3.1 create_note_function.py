@@ -111,7 +111,7 @@ def create_note_function():
     while True:
         print("\nВыберите действие: 1 - Добавить заметку; 2 - Просмотреть заметки; 3 - Удалить заметку.")
         answer = input("Ответ: ")
-        if answer == "1"
+        if answer == "1":
             add_data_function()
             print("\nЗаметка сохранена")
         elif answer == "2":
