@@ -1,24 +1,17 @@
 notes = [
-    {"Имя пользователя" : "Артем",   "Заголовок" : "Список покупок"},
-    {"Имя пользователя" : "Татьяна", "Заголовок" : "Рецепт пирога"},
-    {"Имя пользователя" : "Артем",   "Заголовок" : "Инструкция"}
+    {"Имя пользователя": "Артем", "Заголовок": "Список покупок"},
+    {"Имя пользователя": "Татьяна", "Заголовок": "Рецепт пирога"},
+    {"Имя пользователя": "Артем", "Заголовок": "Инструкция"}
 ]
 
 # функция удаления заметки
 def delete_note_function():
-    value = input("Введите имя пользователя или заголовок для удаления заметки: ")
-    for i in reversed(range(len(notes))):
-        if notes[i]["Имя пользователя"].lower == value.lower() or notes[i]["Заголовок"].lower == value.lower():
+    item = input("Введите имя пользователя или заголовок для удаления заметки: ")
+    for i, note in enumerate(notes):
+        if note["Имя пользователя"].lower() == item.lower() or note["Заголовок"].lower() == item.lower():
             del notes[i]
-    else:
-        print("Заметка не найдена")
-
-# функция печати заметки
-def print_note_function():
-    for note in notes:
-        print()
-        for keys, values in note.items():
-            print(keys,":",values)
+            print("Заметка удалена.")
+            return
+    print("Заметка не найдена.")
 
 delete_note_function()
-# print_note_function()
